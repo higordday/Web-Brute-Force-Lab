@@ -1,0 +1,260 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root 
+{
+
+    --main-font: 'Poppins', system-ui, sans-serif;
+
+    --primary-color: #af1820;
+    --primary-hover-color: #c71d27;
+    --primary-pressed-color: #850f15;
+    --primary-soft-color: rgba(175, 24, 32, 0.12);
+
+    --text-color: #ffffff;
+    --muted-text-color: rgba(255, 255, 255, 0.64);
+    --ghost-text-color: rgba(255, 255, 255, 0.42);
+
+    --f-background: #0d0f14;
+    --s-background: #16181d;
+    --t-background: #24282e;
+
+    --border-color: rgba(255, 255, 255, 0.08);
+
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+
+}
+
+*, *::before, *::after 
+{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html { -webkit-text-size-adjust: 100%; }
+
+body 
+{
+
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: var(--f-background);
+    color: var(--text-color);
+    font-family: var(--main-font);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+input, button { font: inherit; }
+
+:focus-visible 
+{
+
+    outline: 2px solid var(--primary-hover-color);
+    outline-offset: 3px;
+
+}
+
+.wbfl 
+{
+
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: var(--space-2);
+
+}
+
+.wbfl__card 
+{
+
+    width: 100%;
+    max-width: 440px;
+    padding: var(--space-3);
+    background-color: var(--s-background);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--primary-color);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+
+}
+
+.wbfl__title 
+{
+
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+
+}
+
+.wbfl__subtitle 
+{
+
+    margin-top: 6px;
+    color: var(--muted-text-color);
+    font-size: 0.875rem;
+
+}
+
+.wbfl__credentials 
+{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-1);
+
+}
+
+.wbfl__credential 
+{
+
+    padding: 12px 14px;
+    background-color: var(--f-background);
+    border: 1px dashed var(--t-background);
+    border-radius: var(--radius-md);
+    min-width: 0;
+
+}
+
+.wbfl__credential-label 
+{
+
+    color: var(--ghost-text-color);
+    font-size: 0.75rem;
+
+}
+
+.wbfl__credential-value 
+{
+
+    margin-top: 2px;
+    color: var(--muted-text-color);
+    font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+    font-size: 0.9375rem;
+    overflow-wrap: anywhere;
+
+}
+
+.wbfl__form 
+{
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+
+}
+
+.wbfl__alert 
+{
+
+    padding: 12px 14px;
+    background-color: var(--primary-soft-color);
+    border: 1px solid rgba(175, 24, 32, 0.35);
+    border-radius: var(--radius-md);
+    color: #ff6b73;
+    font-size: 0.875rem;
+
+}
+
+.wbfl__field 
+{
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+}
+
+.wbfl__label 
+{
+
+    color: var(--muted-text-color);
+    font-size: 0.8125rem;
+
+}
+
+.wbfl__input 
+{
+
+    width: 100%;
+    height: 50px;
+    padding: 0 16px;
+    background-color: var(--f-background);
+    border: 1px solid var(--t-background);
+    border-radius: var(--radius-md);
+    color: var(--text-color);
+    font-size: 1rem; /* 16px avoids zoom on iOS */
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+}
+
+.wbfl__input::placeholder { color: var(--ghost-text-color); }
+
+.wbfl__input:hover { border-color: rgba(255, 255, 255, 0.18); }
+
+.wbfl__input:focus 
+{
+
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-soft-color);
+
+}
+
+.wbfl__button 
+{
+
+    margin-top: var(--space-1);
+    width: 100%;
+    height: 50px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+
+}
+
+.wbfl__button:hover { background-color: var(--primary-hover-color); }
+
+.wbfl__button:active 
+{
+
+    background-color: var(--primary-pressed-color);
+    transform: scale(0.99);
+
+}
+
+@media (min-width: 551px) 
+{
+
+    .wbfl__card { padding: var(--space-4); }
+
+}
+
+@media (prefers-reduced-motion: reduce) 
+{
+
+    * { transition: none !important; }
+
+}

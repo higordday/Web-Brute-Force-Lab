@@ -1,0 +1,82 @@
+
+<?php session_start(); ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+
+    <title>Web Brute Force Lab</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+<body>
+
+    <main class="wbfl">
+        <section class="wbfl__card" aria-labelledby="wbfl-title">
+
+            <header class="wbfl__header">
+
+                <h1 class="wbfl__title" id="wbfl-title">Web Brute Force Lab</h1>
+                <p class="wbfl__subtitle">Practice environment. Sign in with the default credentials below.</p>
+
+            </header>
+
+            <dl class="wbfl__credentials">
+                <div class="wbfl__credential">
+                    <dt class="wbfl__credential-label">Login</dt>
+                    <dd class="wbfl__credential-value">admin</dd>
+                </div>
+
+                <div class="wbfl__credential">
+                    <dt class="wbfl__credential-label">Password</dt>
+                    <dd class="wbfl__credential-value">passw</dd>
+                </div>
+            </dl>
+
+            <form class="wbfl__form" action="/actions/login.php" method="post">
+
+                <?php
+
+                    if (isset($_SESSION['login_form_failure']))
+                    {
+
+                        ?>
+
+                        <p class="wbfl__alert"><?php echo $_SESSION['login_form_failure']; ?></p>
+
+                        <?php
+
+                        unset($_SESSION['login_form_failure']);
+
+                    }
+
+                ?>
+
+                <div class="wbfl__field">
+                    <label class="wbfl__label" for="login">Login</label>
+
+                    <input class="wbfl__input" type="text" id="login" name="login" placeholder="Enter your login" autocomplete="username">
+                </div>
+
+                <div class="wbfl__field">
+                    <label class="wbfl__label" for="password">Password</label>
+                    
+                    <input class="wbfl__input" type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password">
+                </div>
+
+                <button class="wbfl__button" type="submit" name="submit_button">Login</button>
+
+            </form>
+
+        </section>
+    </main>
+
+</body>
+</html>
